@@ -1,0 +1,42 @@
+@import "./variables";
+
+@mixin display-text(
+  $font-size: var(--spacer-24),
+  $line-height: var(--spacer-24),
+  $font-family: var(--noto-sans),
+  $font-color: var(--white),
+  $font-weight: 700
+) {
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $font-color;
+  font-family: $font-family;
+}
+
+@mixin title-text(
+  $font-size: var(--spacer-16),
+  $line-height: var(--spacer-24),
+  $font-family: var(--noto-sans),
+  $font-color: var(--light-gray),
+  $font-weight: 700
+) {
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $font-color;
+  font-family: $font-family;
+  font-weight: $font-weight;
+}
+
+@mixin sub-title-text(
+  $font-size: 14px,
+  $line-height: var(--spacer-24),
+  $font-family: var(--noto-sans),
+  $font-color: var(--dawn),
+  $font-weight: 400
+) {
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $font-color;
+  font-family: $font-family;
+  font-weight: $font-weight;
+}
