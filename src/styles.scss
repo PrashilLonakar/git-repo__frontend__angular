@@ -3,28 +3,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import "./assets/styles-scss/main.scss";
 
-input,
-select {
-  height: 38px;
-  border-radius: 10px !important;
-  &::placeholder {
-    @include sub-title-text();
-  }
-}
+// input,
+// select {
+//   height: 38px;
+//   border-radius: 10px !important;
+//   &::placeholder {
+//     @include sub-title-text();
+//   }
+// }
 
-.pointer {
-  cursor: pointer;
-}
-.decoration-none {
-  text-decoration: none !important;
-}
+// .pointer {
+//   cursor: pointer;
+// }
+// .decoration-none {
+//   text-decoration: none !important;
+// }
 
-html,
-body {
-  font-family: var(--noto-sans);
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
+// html,
+// body {
+//   font-family: var(--noto-sans);
+//   height: 100%;
+// }
+// body {
+//   margin: 0;
+//   font-family: Roboto, "Helvetica Neue", sans-serif;
+// }
