@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { SharedRoutingModule } from './shared-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ClarityModule } from '@clr/angular';
 
 @NgModule({
   declarations: [],
@@ -12,8 +11,7 @@ import { ClarityModule } from '@clr/angular';
     SharedRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    ClarityModule,
   ],
-  exports: [FormsModule, ReactiveFormsModule, ClarityModule],
+  exports: [FormsModule, ReactiveFormsModule],
 })
 export class SharedModule {}
