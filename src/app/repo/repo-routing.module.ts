@@ -4,6 +4,11 @@ import * as fromRepo from '../repo';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'list',
+    pathMatch: 'full',
+  },
+  {
     path: 'list',
     component: fromRepo.components[0],
   },

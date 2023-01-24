@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layout';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CoreModule } from './core/core.module';
+import { RepoService } from './core/services/repo.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,8 +18,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LayoutModule,
     SharedModule,
     BrowserAnimationsModule,
+    CoreModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [RepoService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
