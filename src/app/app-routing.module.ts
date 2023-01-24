@@ -7,7 +7,13 @@ const routes: Routes = [
   {
     path: '',
     component: MainPageComponent,
-    children: [],
+    children: [
+      {
+        path: 'repo',
+        loadChildren: () =>
+          import('./repo/repo.module').then((mod) => mod.RepoModule),
+      },
+    ],
   },
   {
     path: 'sign-in',
