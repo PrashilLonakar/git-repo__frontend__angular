@@ -13,6 +13,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('./repo/repo.module').then((mod) => mod.RepoModule),
       },
+      {
+        path: 'user',
+        loadChildren: () =>
+          import('./user/user.module').then((mod) => mod.UserModule),
+      },
     ],
   },
   {
