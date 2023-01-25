@@ -1,1 +1,55 @@
-<p>detail works!</p>
+<div class="container mt-3">
+  <div class="card card-detail">
+    <div class="card-header">
+      <h1>Git User</h1>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div>
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Recipient's username *"
+              aria-label="Recipient's username"
+              aria-describedby="button-addon2"
+              formControlName="userSearch"
+            />
+            <button
+              class="btn btn-outline-secondary"
+              type="submit"
+              id="button-addon2"
+            >
+              submit
+            </button>
+          </div>
+          <div
+            class="text-danger text-small"
+            style="margin-left: 0.8rem"
+            *ngIf="userForm.get('userSearch').errors && isSubmit"
+          >
+            <div *ngIf="userForm.get('userSearch')?.errors?.required">
+              Name is Required
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body mt-4 card-contain">
+          <div class="card" style="width: 18rem">
+            <div class="card-header">
+              <h1>Git User</h1>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

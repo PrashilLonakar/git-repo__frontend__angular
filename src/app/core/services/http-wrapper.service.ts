@@ -12,21 +12,21 @@ export class HttpWrapperService {
 
   get(requestUrl: string): Observable<any> {
     const url = API_ENDPOINT + requestUrl;
-    return this.http.get(url);
+    return this.http.get(url, { observe: 'response' });
   }
 
   post(requestUrl: string, body: any): Observable<any> {
     const url = API_ENDPOINT + requestUrl;
-    return this.http.post(url, body);
+    return this.http.post(url, body, { observe: 'response' });
   }
 
   update(requestUrl: string, body: any): Observable<any> {
     const url = API_ENDPOINT + requestUrl;
-    return this.http.put(url, body);
+    return this.http.put(url, body, { observe: 'response' });
   }
 
-  delete(requestUrl: string): Observable<void> {
+  delete(requestUrl: string): Observable<any> {
     const url = API_ENDPOINT + requestUrl;
-    return this.http.delete<void>(url);
+    return this.http.delete(url, { observe: 'response' });
   }
 }
