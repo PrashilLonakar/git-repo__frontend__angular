@@ -1,0 +1,23 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+.input-container {
+    margin-bottom: var(--spacer-4);
+    &_input {
+        height: 38px;
+        border: 1px solid var(--cotton-seed) !important;
+        border-radius: 10px !important;
+        background: var(--white);
+        &::placeholder {
+            @include sub-title-text;
+        }
+        &:focus {
+            border: 1px solid var(--light-blue) !important;
+            outline: none;
+            box-shadow: none !important;
+        }
+    }
+    &_label {
+        @include title-text;
+        margin-bottom: var(--spacer-2);
+    }
+}

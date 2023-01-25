@@ -1,2 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css";
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import "./assets/styles-scss/main.scss";
+
+// input,
+// select {
+//   height: 38px;
+//   border-radius: 10px !important;
+//   &::placeholder {
+//     @include sub-title-text();
+//   }
+// }
+
+// .pointer {
+//   cursor: pointer;
+// }
+// .decoration-none {
+//   text-decoration: none !important;
+// }
+
+// html,
+// body {
+//   font-family: var(--noto-sans);
+//   height: 100%;
+// }
+// body {
+//   margin: 0;
+//   font-family: Roboto, "Helvetica Neue", sans-serif;
+// }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
