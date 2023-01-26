@@ -7,12 +7,44 @@
       font-weight: 700;
       font-style: normal;
     }
+    .card-header_left {
+      float: left;
+    }
+    .card-header_right {
+      float: right;
+      font-size: 15px;
+      font-weight: 500;
+
+      .git-user_followers {
+      }
+      .git-user_following {
+      }
+    }
   }
 
   .card-body {
+    .git-user-title {
+      .location {
+        float: right;
+      }
+    }
     .card-contain {
       display: flex;
       justify-content: center;
+
+      .git-user_avatar {
+        font-weight: 900;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        border: 1px solid black;
+      }
+
+      .git-user_name {
+        font-weight: 700;
+        font-style: normal;
+        font-size: 2rem;
+      }
     }
   }
 }

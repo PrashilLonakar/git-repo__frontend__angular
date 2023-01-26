@@ -14,6 +14,7 @@
               aria-label="Recipient's username"
               aria-describedby="button-addon2"
               formControlName="userSearch"
+              (change)="userSearch($event)"
             />
             <button
               class="btn btn-outline-secondary"
@@ -34,18 +35,162 @@
           </div>
         </div>
 
-        <div class="card-body mt-4 card-contain">
-          <div class="card" style="width: 18rem">
+        <div class="card-body mt-4 card-contain" *ngIf="isShow">
+          <div class="card" style="width: 36rem">
             <div class="card-header">
-              <h1>Git User</h1>
+              <div class="card-header_left">
+                <span *ngIf="gitUserData?.avatar_url">
+                  <img
+                    class="git-user_avatar"
+                    [src]="gitUserData?.avatar_url"
+                    [alt]="gitUserData?.avatar_url"
+                  />
+                </span>
+                <span class="git-user_name">
+                  {{
+                    gitUserData?.name
+                      ? gitUserData?.name
+                      : gitUserData?.login
+                      ? gitUserData?.login
+                      : ""
+                  }}
+                </span>
+              </div>
+              <div class="card-header_right">
+                <p
+                  class="git-user_followers text-success"
+                  *ngIf="gitUserData?.followers"
+                >
+                  <span>followers :</span>
+                  <span> {{ gitUserData?.followers }}</span>
+                </p>
+                <p
+                  class="git-user_following text-danger"
+                  *ngIf="gitUserData?.following"
+                >
+                  <span>following :</span>
+                  <span> {{ gitUserData?.following }}</span>
+                </p>
+              </div>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h4 class="card-title git-user-title">
+                <span *ngIf="gitUserData?.blog">
+                  Blog link :
+                  <a
+                    [href]="gitUserData?.blog ? gitUserData?.blog : ''"
+                    target="_blank"
+                    role="button"
+                  >
+                    {{ gitUserData?.blog ? gitUserData?.blog : "" }}
+                  </a>
+                </span>
+                <span
+                  class="location text-warning"
+                  *ngIf="gitUserData?.location"
+                >
+                  Location :
+                  {{ gitUserData?.location ? gitUserData?.location : "" }}
+                </span>
+              </h4>
+
+              <h5 class="card-title">
+                <p *ngIf="gitUserData?.html_url">
+                  Git Url :
+                  <a
+                    [href]="gitUserData?.html_url ? gitUserData?.html_url : ''"
+                    target="_blank"
+                    role="button"
+                  >
+                    {{ gitUserData?.html_url ? gitUserData?.html_url : "" }}
+                  </a>
+                </p>
+                <p *ngIf="gitUserData?.url">
+                  Git Api Url :
+                  <a
+                    [href]="gitUserData?.url ? gitUserData?.url : ''"
+                    target="_blank"
+                    role="button"
+                  >
+                    {{ gitUserData?.url ? gitUserData?.url : "" }}
+                  </a>
+                </p>
+              </h5>
+
+              <div class="card-text">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-12">
+                    <div>
+                      Created Date :
+                      <p>
+                        {{
+                          gitUserData?.created_at
+                            ? (gitUserData?.created_at | date : "short")
+                            : ""
+                        }}
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-12">
+                    <div>
+                      Updated Date :
+                      <p>
+                        {{
+                          gitUserData?.updated_at
+                            ? (gitUserData?.updated_at | date : "short")
+                            : ""
+                        }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-12">
+                    <div>
+                      Follower Url :
+                      <p>
+                        <a
+                          [href]="
+                            gitUserData?.followers_url
+                              ? gitUserData?.followers_url
+                              : ''
+                          "
+                          target="_blank"
+                          role="button"
+                        >
+                          {{
+                            gitUserData?.followers_url
+                              ? gitUserData?.followers_url
+                              : ""
+                          }}
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-12">
+                    <div>
+                      Following Url :
+                      <p>
+                        <a
+                          [href]="
+                            gitUserData?.following_url
+                              ? gitUserData?.following_url
+                              : ''
+                          "
+                          target="_blank"
+                          role="button"
+                        >
+                          {{
+                            gitUserData?.following_url
+                              ? gitUserData?.following_url
+                              : ""
+                          }}
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

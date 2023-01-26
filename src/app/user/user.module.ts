@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
-import { DetailComponent } from './detail/detail.component';
 import { SharedModule } from '../shared/shared.module';
+import * as fromUser from '../user';
 
 @NgModule({
-  declarations: [DetailComponent],
+  declarations: [...fromUser.components],
   imports: [CommonModule, UserRoutingModule, SharedModule],
+  providers: [],
 })
 export class UserModule {}

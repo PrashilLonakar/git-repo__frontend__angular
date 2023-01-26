@@ -6,9 +6,7 @@ import { LayoutModule } from './layout';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
-import { RepoService } from './core/services/repo.service';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,10 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     CoreModule,
     HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
   ],
-  providers: [RepoService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
