@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { RepoService } from 'src/app/core/services/repo.service';
 
 @Component({
@@ -8,10 +9,16 @@ import { RepoService } from 'src/app/core/services/repo.service';
 })
 export class ListComponent implements OnInit {
   repos: any = [];
-  constructor(private repoService: RepoService) {}
+  constructor(
+    private repoService: RepoService,
+    private _activatedRoute: ActivatedRoute,
+    private _router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.getRepo('prashil1');
+    this._activatedRoute.params.subscribe((queryParams: Params) => {
+      this.getRepo(queryParams['username']);
+    });
   }
 
   getRepo(username: string) {
@@ -19,11 +26,6 @@ export class ListComponent implements OnInit {
       (res: any) => {
         console.log('username', username);
         console.log('res', res);
-        let respo = res;
-        let val = [];
-        respo.map((item: any) => {
-          val.push(item);
-        });
         this.repos = res;
         console.log('this.repos', this.repos);
       },

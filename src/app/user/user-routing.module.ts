@@ -12,6 +12,11 @@ const routes: Routes = [
     path: 'detail',
     component: fromUser.components[0],
   },
+  {
+    path: ':username/repo',
+    loadChildren: () =>
+      import('../repo/repo.module').then((mod) => mod.RepoModule),
+  },
 ];
 
 @NgModule({

@@ -9,11 +9,6 @@ const routes: Routes = [
     component: MainPageComponent,
     children: [
       {
-        path: 'repo',
-        loadChildren: () =>
-          import('./repo/repo.module').then((mod) => mod.RepoModule),
-      },
-      {
         path: 'user',
         loadChildren: () =>
           import('./user/user.module').then((mod) => mod.UserModule),

@@ -5,15 +5,8 @@ import { RepoRoutingModule } from './repo-routing.module';
 import { ListComponent } from './list/list.component';
 import { DetailComponent } from './detail/detail.component';
 
-
 @NgModule({
-  declarations: [
-    ListComponent,
-    DetailComponent
-  ],
-  imports: [
-    CommonModule,
-    RepoRoutingModule
-  ]
+  declarations: [ListComponent, DetailComponent],
+  imports: [CommonModule, RepoRoutingModule],
 })
-export class RepoModule { }
+export class RepoModule {}

@@ -196,5 +196,16 @@
         </div>
       </form>
     </div>
+    <div class="card-footer">
+      <!-- [routerLink]="['/user', gitUserData.login, 'repo']" -->
+      <button
+        [routerLink]="['/user', gitUserData.login, 'repo']"
+        type="button"
+        *ngIf="isShow"
+        class="btn btn-warning"
+      >
+        All Repos <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
   </div>
 </div>
